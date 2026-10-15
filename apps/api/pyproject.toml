@@ -1,0 +1,26 @@
+[project]
+name = "runiverse-api"
+version = "0.0.1"
+description = "Runiverse Marketing Agent - FastAPI 데이터 게이트웨이"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "runiverse-contracts",
+]
+
+[tool.uv.sources]
+runiverse-contracts = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/runiverse_api"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# Vercel 배포: src 레이아웃이라 FastAPI 앱 위치를 직접 지정
+[tool.vercel]
+entrypoint = "src.runiverse_api.main:app"

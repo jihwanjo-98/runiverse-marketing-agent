@@ -1,0 +1,24 @@
+[project]
+name = "hub-worker"
+version = "0.0.1"
+description = "Runiverse Marketing Agent - local worker"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27",
+  "pydantic>=2.7",
+  "python-dotenv>=1.0",
+  "runiverse-contracts",
+]
+
+[tool.uv.sources]
+runiverse-contracts = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hub_worker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

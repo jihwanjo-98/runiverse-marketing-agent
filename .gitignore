@@ -1,0 +1,53 @@
+# ── 비밀 정보: 절대 커밋 금지 ──
+.env
+.env.*
+!.env.example
+!.env.local.example
+*.pem
+*service-account*.json
+credentials*.json
+
+# ── 실제 캠페인 데이터·실행 기록 (샘플만 커밋) ──
+data/raw/
+data/private/
+worker/runs/
+worker/.runtime/
+*.db
+*.sqlite*
+*.log
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+
+# ── Node / Next.js / Vercel ──
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# ── Supabase 로컬 ──
+supabase/.temp/
+supabase/.branches/
+
+# ── Claude Code: 공유 설정은 커밋, 개인 설정은 제외 ──
+.claude/settings.local.json
+*.local.md
+
+# ── OS·에디터 ──
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# ── 커밋 훅 임시 파일 ──
+*.bak

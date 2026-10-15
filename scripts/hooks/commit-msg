@@ -1,0 +1,10 @@
+#!/bin/sh
+# 커밋 메시지에서 Claude 공동작성자·세션 표기를 제거한다.
+# 연결: git config core.hooksPath scripts/hooks
+MSG_FILE="$1"
+sed -i.bak \
+  -e '/^[Cc]o-[Aa]uthored-[Bb]y:.*[Cc]laude/d' \
+  -e '/^[Cc]o-[Aa]uthored-[Bb]y:.*noreply@anthropic\.com/d' \
+  -e '/^Claude-Session:/d' \
+  -e '/Generated with \[Claude Code\]/d' \
+  "$MSG_FILE" && rm -f "$MSG_FILE.bak"

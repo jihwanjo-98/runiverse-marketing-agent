@@ -1,0 +1,10 @@
+# Windows에서 작업해도 저장소에는 LF로 저장
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+scripts/hooks/* text eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.xlsx binary
